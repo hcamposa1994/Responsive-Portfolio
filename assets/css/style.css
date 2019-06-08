@@ -8,9 +8,14 @@ body {
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 /* general */
+html,
+body {
+  height: 100%;
+}
 
 .container {
   width: 100%;
@@ -82,52 +87,90 @@ nav {
   margin-top: 25px;
 }
 
-nav a {
+nav li {
   display: inline-block;
   padding-left: 15px;
   margin-left: 15px;
   line-height: 18px;
-  color: #999;
-  text-decoration: none;
   border-left: 1px solid #efefef;
 }
 
+nav a {
+  color: #999;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #666;
+}
+
 nav a:first-child {
+  padding-left: 0;
+  margin-left: 0;
   border-left: 0 none;
 }
 
 /* footer */
 
+footer,
+.push {
+  height: 100px;
+}
+
 footer {
   padding: 30px 0;
   clear: both;
   font-size: 12px;
-  color: #ffffff;
-  color: #cccccc;
+  color: #ccc;
   text-align: center;
-  background: #666666;
+  background: #666;
   border-top: 8px solid #4aaaa5;
-  height: 50px;
 }
 
-h3, h2 {
+.sidebar {
+  float: right;
+  width: 100%;
+  max-width: 270px;
+  padding: 30px;
+  margin-bottom: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+h3,
+.sidebar h2 {
   padding-bottom: 20px;
   margin-bottom: 15px;
   line-height: 22px;
-  border-bottom: 2px solid #eeeeee;
+  border-bottom: 2px solid #eee;
+}
+
+.sidebar li {
+  float: left;
+  width: 62px;
+  height: 62px;
+  margin-top: 8px;
+  margin-right: 10px;
+}
+
+.sidebar img {
+  max-width: 100%;
+}
+
+.sidebar li:last-child {
+  margin-right: 0;
 }
 
 /* main */
 
-#main-container {
+main {
   padding-top: 130px;
-  min-height: calc(100vh - 70px);
 }
 
 .main-section {
   float: left;
   width: 100%;
-  max-width: 960px;
+  max-width: 650px;
   padding: 30px;
   margin: 0 0 40px;
   background: #ffffff;
@@ -215,3 +258,78 @@ input[type=submit] {
   background: #4aaaa5;
   border: 0 none;
 }
+
+@media only screen and (max-width:980px) {
+  nav {
+    margin-right: 5px;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .main-section,
+  .sidebar {
+    max-width: 100%;
+  }
+
+  main {
+    overflow: auto;
+  }
+
+  .work {
+    width: 47%;
+    margin-bottom: 10px;
+  }
+
+  .work:nth-child(even) {
+    margin-right: 0;
+  }
+
+  .work:nth-child(odd) {
+    float: right;
+  }
+
+  .auth-image {
+    width: 50%;
+  }
+
+  .sidebar {
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 640px){
+  #masthead {
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  header .container {
+    padding: 0;
+  }
+
+  main.container {
+    padding-top: 0;
+  }
+
+  #logo,
+  .work,
+  .auth-image {
+    width: 100%;
+  }
+
+  nav {
+    width: 100%;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  nav a {
+    width: 30%;
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+
+
+
